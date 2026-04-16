@@ -1,13 +1,3 @@
-"""
-fractal.py – Vypocet Mandelbrotovej a Juliovej mnoziny.
-
-Mandelbrot:  z0 = 0,  z_{n+1} = z_n^2 + c   (c = pixel)
-Julia:       z0 = pixel,  z_{n+1} = z_n^2 + c   (c = konstanta)
-
-Bod patri do mnoziny ak |z_n| <= 2 pre vsetky n.
-Farba sa urcuje podla poctu iteracii potrebnych na unik (|z| > 2).
-"""
-
 import numpy as np
 
 
