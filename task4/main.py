@@ -1,0 +1,25 @@
+from src.visualization import run_app
+
+
+if __name__ == "__main__":
+    print("=" * 55)
+    print("  Task 4 – Q-learning: Find the Cheese")
+    print("=" * 55)
+    print()
+    print("Q-learning parameters:")
+    print("  alpha (learning rate) : 0.1")
+    print("  gamma (discount)      : 0.9")
+    print("  epsilon start         : 1.0  -> decays to 0.01")
+    print("  epsilon decay         : 0.995")
+    print("  episodes per run      : 1000")
+    print()
+    print("Rewards:")
+    print("  Cheese  : +100")
+    print("  Trap    : -100")
+    print("  Step    :  -1")
+    print()
+    print("Build your maze, then click 'Start learning'.")
+    print()
+    print("Launching interactive visualisation...")
+    print()
+    run_app()
