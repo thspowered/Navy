@@ -14,14 +14,17 @@ def compute_mandelbrot(
     -----------------
     iterations : np.ndarray tvaru (height, width) – pocet iteracii pre kazdy pixel
     """
+    # Mriezka komplexnych cisel – kazdy pixel = jedno c = x + yi
     x = np.linspace(x_min, x_max, width)
     y = np.linspace(y_min, y_max, height)
     C = x[np.newaxis, :] + 1j * y[:, np.newaxis]
 
+    # Inicializacia: z0=0, iterations=vysledok, mask=ktore pixely este pocitat
     Z = np.zeros_like(C, dtype=complex)
     iterations = np.zeros(C.shape, dtype=int)
     mask = np.ones(C.shape, dtype=bool)
 
+    # Hlavny cyklus – aplikuje z_{n+1} = z_n^2 + c, zaznamena kedy pixel unikol
     for i in range(max_iter):
         Z[mask] = Z[mask] ** 2 + C[mask]
         escaped = mask & (np.abs(Z) > 2)
@@ -46,14 +49,17 @@ def compute_julia(
     -----------------
     iterations : np.ndarray tvaru (height, width) – pocet iteracii pre kazdy pixel
     """
+    # Mriezka komplexnych cisel – rozdiel: Z zacina ako pixel (nie 0)
     x = np.linspace(x_min, x_max, width)
     y = np.linspace(y_min, y_max, height)
     Z = x[np.newaxis, :] + 1j * y[:, np.newaxis]
 
+    # Inicializacia: c je fixna konstanta pre vsetky pixely
     c = complex(c_real, c_imag)
     iterations = np.zeros(Z.shape, dtype=int)
     mask = np.ones(Z.shape, dtype=bool)
 
+    # Hlavny cyklus – rovnaky vzorec, ale c je konstanta (nie pixel)
     for i in range(max_iter):
         Z[mask] = Z[mask] ** 2 + c
         escaped = mask & (np.abs(Z) > 2)

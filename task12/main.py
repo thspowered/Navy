@@ -1,0 +1,28 @@
+from src.visualization import run_app
+
+
+if __name__ == "__main__":
+    print("=" * 62)
+    print("  Task 12 – Cellular automata: Forest fire algorithm")
+    print("=" * 62)
+    print()
+    print("Pravidla (Drossel-Schwabl model):")
+    print("  1. Empty/Burnt -> Tree   s pravdepodobnostou p")
+    print("  2. Tree s horiacim susedom -> Burning")
+    print("  3. Tree bez horiaceho suseda -> Burning s pravdepodobnostou f")
+    print("  4. Burning -> Burnt (a casom sa znovu zalesnuje cez bod 1)")
+    print()
+    print("Stavy bunky:")
+    print("  0 = empty   (hneda)")
+    print("  1 = tree    (zelena)")
+    print("  2 = burning (oranzova)")
+    print("  3 = burnt   (cierna)")
+    print()
+    print("Default parametre:  p = 0.05,  f = 0.001,  density = 0.5")
+    print("Okolie: von Neumann (4 susedia) alebo Moore (8 susedov)")
+    print()
+    print("Animacia bezi nekonecne – ovladaj rychlost sliderom.")
+    print()
+    print("Spustam interaktivnu vizualizaciu...")
+    print()
+    run_app()

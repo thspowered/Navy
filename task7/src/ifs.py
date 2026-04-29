@@ -1,20 +1,5 @@
-"""
-ifs.py – IFS (Iterated Function System) generovanie 3D fraktalov.
-
-Kazda transformacia je definovana afinnou transformaciou:
-    [x']   [a b c]   [x]   [j]
-    [y'] = [d e f] * [y] + [k]
-    [z']   [g h i]   [z]   [l]
-
-V kazdej iteracii sa nahodne zvoli jedna zo 4 transformacii
-s pravdepodobnostou p = 0.25 a aplikuje sa na aktualny bod.
-"""
-
 import numpy as np
-
-
 # ── Definicie modelov ────────────────────────────────────────────────────────
-
 MODELS = {
     1: {
         "name": "First model",

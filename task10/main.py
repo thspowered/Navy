@@ -1,0 +1,28 @@
+from src.visualization import run_app
+
+
+if __name__ == "__main__":
+    print("=" * 62)
+    print("  Task 10 – Theory of Chaos: Logistic map + NN prediction")
+    print("=" * 62)
+    print()
+    print("Logisticka mapa:")
+    print("  x_{n+1} = a * x_n * (1 - x_n)")
+    print()
+    print("Mody:")
+    print("  1. Bifurkacny diagram   – atraktor pre a v [0, 4]")
+    print("  2. Trening + Predikcia  – split-screen (Example 2)")
+    print("  3. Predikcia (overlay)  – cervene NN body cez bifurkaciu")
+    print("                            (Example 3)")
+    print()
+    print("Neuronova siet (cisto NumPy):")
+    print("  Architektura : 2 -> 32 -> 16 -> 1  (tanh, sigmoid)")
+    print("  Optimizer    : Adam,  loss = MSE")
+    print("  Vstup        : (a/4, x_n)")
+    print("  Vystup       : x_{n+1}")
+    print()
+    print("Animacia: progresivne dokresluje stlpce diagramu zlava doprava.")
+    print()
+    print("Spustam interaktivnu vizualizaciu...")
+    print()
+    run_app()
